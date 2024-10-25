@@ -1,16 +1,32 @@
 package com.dev.nistha.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.dev.nistha.dto.ResponseDTO;
+import com.dev.nistha.entity.Hotel;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/hotel")
 public class HotelController {
 
-    @GetMapping("/detail")
-    public String getHotel() {
-        return "Raddison Blu";
+    @GetMapping
+    public ResponseEntity<Void> getHotels() {
+        return null;
+    }
+
+    @GetMapping("/{hotelId}")
+    public ResponseEntity<Void> getHotel(@PathVariable Long hotelId) {
+        return null;
+    }
+
+    @PostMapping
+    public ResponseEntity<ResponseDTO> createHotel(@RequestBody Hotel hotel) {
+        return null;
+    }
+
+    @DeleteMapping("/{hotelId}")
+    public ResponseEntity<ResponseDTO> deleteHotel(@PathVariable Long hotelId) {
+        return null;
     }
 
 }
