@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/hotel")
 public class HotelController {
+    
+//    Added for testing Git hub rules sets
 
     @GetMapping("/detail")
     public String getHotel() {
