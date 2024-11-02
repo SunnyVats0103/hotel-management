@@ -2,7 +2,7 @@ package com.dev.nistha.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.CreatedDate;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -32,9 +32,9 @@ public class Staff {
     private String phone;
     @Column(columnDefinition = "varchar(255)")
     private String email;
-    @CreatedDate
+    @CreationTimestamp
     private Date hireDate;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Hotel hotel;
 
 }
