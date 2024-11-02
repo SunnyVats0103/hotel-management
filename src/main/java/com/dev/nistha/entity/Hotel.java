@@ -19,7 +19,9 @@ public class Hotel {
     private Long id;
     @Column(name = "hotel_name")
     private String name;
-    @OneToMany
+    @OneToMany(mappedBy = "hotel")
     private List<Room> room;
+    @OneToMany(mappedBy = "hotel")
+    private List<Staff> staff;
 
 }
