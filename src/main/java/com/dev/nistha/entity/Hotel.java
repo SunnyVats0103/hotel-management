@@ -21,5 +21,7 @@ public class Hotel {
     private String name;
     @OneToMany(mappedBy = "hotel")
     private List<Room> room;
+    @OneToMany(mappedBy = "hotel")
+    private List<Staff> staff;
 
 }
