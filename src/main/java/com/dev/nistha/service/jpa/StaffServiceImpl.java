@@ -8,7 +8,6 @@ import com.dev.nistha.mapper.StaffMapper;
 import com.dev.nistha.repository.StaffRepository;
 import com.dev.nistha.service.StaffService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
@@ -59,7 +58,7 @@ public class StaffServiceImpl implements StaffService {
     }
 
     @Override
-    public ResponseDTO updateStaff(StaffDTO staffDTO) throws NoStaffFoundException, ParseException {
+    public ResponseDTO updateStaff(StaffDTO staffDTO) throws ParseException {
         Staff updatedStaff = staffRepository.save(StaffMapper.staffDTOToStaff(staffDTO));
 
         if (updatedStaff.getId() != null)
